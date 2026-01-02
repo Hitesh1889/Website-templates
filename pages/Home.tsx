@@ -6,9 +6,10 @@ import { TEMPLATES } from '../constants';
 
 interface HomeProps {
   onNavigate: (page: string) => void;
+  onPreview: (id: string) => void;
 }
 
-const Home: React.FC<HomeProps> = ({ onNavigate }) => {
+const Home: React.FC<HomeProps> = ({ onNavigate, onPreview }) => {
   const featuredTemplates = TEMPLATES.slice(0, 3);
 
   return (
@@ -19,13 +20,13 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           <div className="flex-1 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-100 px-4 py-2 rounded-full text-indigo-600 text-sm font-semibold mb-6">
               <span className="flex h-2 w-2 rounded-full bg-indigo-600 animate-pulse"></span>
-              New templates added every week
+              Fresh niche-ready designs for 2024
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 leading-tight">
               Launch your <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">online presence</span> in minutes.
             </h1>
             <p className="text-xl text-slate-600 mb-10 max-w-2xl leading-relaxed">
-              Premium, high-performance website templates designed for conversion. Choose from 50+ niche-specific layouts or get a custom site built by our experts.
+              Premium, high-performance website templates designed for conversion. Choose from our deep niche-specific layouts or get a custom site built by our experts.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button 
@@ -53,7 +54,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           <div className="flex-1 relative">
             <div className="relative z-10 rounded-3xl shadow-2xl overflow-hidden border-8 border-white">
               <img 
-                src="https://picsum.photos/seed/hero/1200/900" 
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200" 
                 alt="Template Showcase" 
                 className="w-full h-auto"
               />
@@ -81,7 +82,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredTemplates.map(template => (
-            <TemplateCard key={template.id} template={template} onPreview={() => {}} />
+            <TemplateCard key={template.id} template={template} onPreview={onPreview} />
           ))}
         </div>
       </section>

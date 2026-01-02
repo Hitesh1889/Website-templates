@@ -7,6 +7,7 @@ export interface Template {
   imageUrl: string;
   price: string;
   features: string[];
+  demoUrl?: string; // Link to a simulated demo
 }
 
 export enum NicheType {
@@ -17,5 +18,9 @@ export enum NicheType {
   RESTAURANT = 'Restaurant',
   REAL_ESTATE = 'Real Estate',
   HEALTH = 'Health',
-  EDUCATION = 'Education'
+  EDUCATION = 'Education',
+  FITNESS = 'Fitness',
+  LAW = 'Law',
+  PHOTOGRAPHY = 'Photography',
+  ARCHITECTURE = 'Architecture'
 }
