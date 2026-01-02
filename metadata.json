@@ -1,0 +1,7 @@
+{
+  "name": "NicheNexus - Premium Web Templates",
+  "description": "A showcase of high-quality website templates across multiple industries, featuring an AI-powered consultant to help you choose the perfect design for your business.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
